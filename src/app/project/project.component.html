@@ -1,0 +1,24 @@
+<ul>
+  <li>
+    <h1 class="project-list-label">Create New Project</h1><br>
+    
+      <input type="text" placeholder="Project Title" [(ngModel)] ="project.name"  id="projectname" name="projectname"  required>
+      <button (click)="addproject()" name="addNew" class="button">Create</button>
+         
+  </li>
+</ul>
+
+
+<h1 class="project-list-label">Project List</h1>
+
+<ul>
+<li *ngFor="let lists of list">
+  <label>Project Title: </label><a>{{lists.name}}</a>
+  <ul>
+    <li><a class="view-class" routerLink="project-details/{{lists.id}}">View Details</a></li>
+    <li><a class="edit-class" routerLink="project-edit/{{lists.id}}">Edit</a></li>
+    <li><a href="javascript:void(0)" class="delete-class" (click)="deleteproject(lists.id)">Delete</a></li>
+  </ul>
+</li>
+
+</ul>

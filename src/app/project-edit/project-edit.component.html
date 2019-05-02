@@ -1,0 +1,12 @@
+<ul>
+  <li>
+    <h1 class="project-list-label">Update Project</h1><br>
+    
+    <form #form="ngForm" (ngSubmit)="update(form)">
+        <input type="hidden" placeholder="Checklist Title" [(ngModel)] ="thisDetails.id"  id="id" name="id">
+      <input type="text" placeholder="Checklist Title" [(ngModel)] ="thisDetails.name"  id="name" name="name">
+      <button type="submit" name="updateProject" class="button">Update</button>  
+    </form>
+        
+  </li>
+</ul>

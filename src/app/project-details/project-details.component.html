@@ -1,0 +1,25 @@
+<u><h1 class="project-list">Project: {{thisDetails.name}}</h1></u><br>
+<ul>
+  <li>
+    <h1 class="project-list-label">Create New Check list</h1><br>
+    
+    <input type="text" placeholder="Checklist Title" [(ngModel)] ="checklistin.name"  id="checklistname" name="checklistname" >
+    <button (click)="addchecklist()" name="addNew" class="button">ADD</button>
+         
+  </li>
+</ul>
+
+
+<h1 class="project-list-label">Check List / Task List</h1>
+
+<ul>
+<li *ngFor="let checkLists of checkList">
+  <label>Title: </label><a>{{checkLists.name}}</a>
+  <ul>
+    <!---<li><a class="view-class" routerLink="checklist-details/{{checkLists.id}}">View Details</a></li>
+    <li><a class="edit-class" routerLink="checklist-edit/{{checkLists.id}}">Edit</a></li>-->
+    <li><a class="delete-class" routerLink="#" (click) = "delete_checklist(checkLists.id)">Delete</a></li>
+  </ul>
+</li>
+
+</ul>
